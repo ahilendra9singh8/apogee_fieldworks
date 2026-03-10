@@ -296,3 +296,4 @@ Agile ek development methodology hai jabki Jira ek tool hai jo Agile process ko 
 | Implementation | Scrum, Kanban jaise frameworks me implement hota hai      | Jira in frameworks ko **manage karne me help karta hai**           |
 | Output         | **Working software after every sprint**                   | **Task progress aur project tracking**                             |
 | Dependency     | Agile tool ke bina bhi follow ho sakta hai                | Jira mostly **Agile process ko manage karne ke liye use hota hai** |
+
