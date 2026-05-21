@@ -815,7 +815,7 @@ public class UserService {
 Object creation ka control Spring ke paas hota hai, developer ke paas nahi
 -> Spring Boot uses **ApplicationContext as IOC container.**
 
-##2. What is a Bean?
+#2. What is a Bean?
 Bean = **Java object** managed by Spring
 
 Bean ka lifecycle:
@@ -824,7 +824,7 @@ Bean ka lifecycle:
 -> Use
 -> Destruction
 
-##3. How Spring Boot Creates Beans?
+#3. How Spring Boot Creates Beans?
 
 Spring beans create hote hain via:
 -> @Component
@@ -833,7 +833,7 @@ Spring beans create hote hain via:
 -> @Controller
 -> @Bean
 
-##4. Bean Lifecycle (VERY IMPORTANT)
+#4. Bean Lifecycle (VERY IMPORTANT)
 Steps:
 
 1. Bean instantiated
@@ -861,7 +861,7 @@ public class MyBean {
 
 @PostConstruct is used for initialization logic after DI.
 
-##5. Bean Scopes (VERY IMPORTANT)
+#5. Bean Scopes (VERY IMPORTANT)
 Available scopes:
 
 | Scope       | Meaning                 |
@@ -872,7 +872,7 @@ Available scopes:
 | Session     | One per HTTP session    |
 | Application | One per ServletContext  |
 
-##6. 🔹 Singleton vs Prototype
+#6. 🔹 Singleton vs Prototype
 1.Singleton:
 -> One object for entire app
 -> Default
@@ -891,7 +891,7 @@ Spring manages full lifecycle of singleton beans but only creation of prototype 
 public class MyBean {
 }
 
-##7. Lazy vs Eager Initialization
+#7. Lazy vs Eager Initialization
 1. Eager (default):
 Bean created at startup
 
@@ -906,7 +906,7 @@ public class HeavyBean {
 📌 Use case
 Large object → Lazy loading
 
-##8. Circular Dependency (VERY IMPORTANT 🔥)
+#8. Circular Dependency (VERY IMPORTANT 🔥)
 ❓ What is Circular Dependency?
 
 Class A needs B
@@ -934,10 +934,10 @@ class B {
 🚨 Result:
 BeanCurrentlyInCreationException
 
-##9. How to Solve Circular Dependency?
+#9. How to Solve Circular Dependency?
 ✅ Solution-1: Constructor Injection (BEST)
 
-👉 Spring detects at compile time
+👉 **Spring detects at compile time**
 
 ✅ Solution-2: @Lazy
 
@@ -954,22 +954,22 @@ private A a;
 
 Circular dependency is a design issue and should be avoided.
 
-##10. Why Constructor Injection Prevents Circular Dependency?
+#10. Why Constructor Injection Prevents Circular Dependency?
 -> Object creation happens at once
 -> Spring fails fast
 
-##11. Bean Scopes & Circular Dependency
+#11. Bean Scopes & Circular Dependency
 Singleton → possible to resolve
 Prototype → ❌ cannot be resolved
 
-##12. Difference: @Component vs @Bean
+#12. Difference: @Component vs @Bean
 | @Component   | @Bean        |
 | ------------ | ------------ |
 | Class level  | Method level |
 | Auto scanned | Explicit     |
 | App classes  | Third-party  |
 
-##13. Interview Rapid-Fire Questions
+#13. Interview Rapid-Fire Questions
 Q: Default scope in Spring?
 👉 Singleton
 
