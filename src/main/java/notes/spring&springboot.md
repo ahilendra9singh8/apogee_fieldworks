@@ -1,6 +1,10 @@
+##8. How Spring Boot Creates Standalone Application?
+
+
+
 ################################################## PART 1 - Basics of Spring & Spring Boot ############################
 
-##1. How Spring Boot Application Works?
+#1. How Spring Boot Application Works?
 
 Flow:
 1. Main class run hoti hai
@@ -15,7 +19,7 @@ Spring Boot internally:
 2. Applies conditional configs
 3. Registers beans in IOC container
 
-##2. 8️⃣ Types of Applications Spring Boot is used for
+#2. Types of Applications Spring Boot is used for
 
 1. REST APIs
 2. Microservices
@@ -23,7 +27,7 @@ Spring Boot internally:
 4. Batch Applications
 5. Cloud-native apps
 
-##3. Spring Boot Architecture (High Level)
+#3. Spring Boot Architecture (High Level)
 
 Client
  ↓
@@ -38,7 +42,7 @@ Database
 📌 Interview Tip
 Always mention Controller → Service → Repository pattern.
 
-##4. 🔟 What is Spring Boot Starter?
+#4. What is Spring Boot Starter?
 
 Starter = Predefined dependency bundle
 
@@ -54,7 +58,7 @@ Includes:
 📌 Benefit
 No need to add 10 dependencies manually.
 
-##5. Spring Boot Starter Parent
+#5. Spring Boot Starter Parent
 
 <parent>
 	<groupId>org.springframework.boot</groupId>
@@ -68,7 +72,7 @@ Role:
 2. Default plugin configuration
 3. Java version support
 
-##6. Default Server in Spring Boot
+#6. Default Server in Spring Boot
 
 ✅ Apache Tomcat
 
@@ -76,7 +80,7 @@ Other options:
 1. Jetty
 2. Undertow
 
-##7. What is Embedded Server?
+#7. What is Embedded Server?
 
 Server jo application ke sath hi package hota hai.
 
@@ -87,16 +91,16 @@ No need:
 -> External Tomcat install
 -> WAR deploy
 
-##8. How Spring Boot Creates Standalone Application?
+#8. How Spring Boot Creates Standalone Application?
 
 1. Uses embedded server
 2. Runs using main() method
 3. Packaged as executable JAR
 
-##9. Why No XML Configuration in Spring Boot?
+#9. Why No XML Configuration in Spring Boot?
 
 Because:
-1. Java based config
+1. Java based config (@Configuration)
 2. Annotation driven
 3. Convention over configuration
 
@@ -105,7 +109,7 @@ Because:
 ####### Spring Boot prefers annotations over XML.
 
 
-##10. Spring Boot vs Spring MVC
+#10. Spring Boot vs Spring MVC
 
 | Spring MVC    | Spring Boot            |
 | ------------- | ---------------------- |
@@ -115,7 +119,7 @@ Because:
 | WAR deploy    | JAR deploy             |
 
 
-##11. Difference between Spring & Spring Boot
+#11. Difference between Spring & Spring Boot
 
 | Spring                 | Spring Boot           |
 | ---------------------- | --------------------- |
@@ -124,9 +128,9 @@ Because:
 | External server needed | Embedded server       |
 | Manual dependency mgmt | Starter based         |
 | Slow setup             | Very fast setup       |
+| WAR deploy             | JAR Deploy
 
-
-##12. Spring Boot vs Spring Cloud
+#12. Spring Boot vs Spring Cloud
 
 | Spring Boot        | Spring Cloud            |
 | ------------------ | ----------------------- |
@@ -140,7 +144,7 @@ Because:
 Spring Boot builds apps, Spring Cloud manages microservices.
 
 
-##13. ⭐ Extra Interview Questions (PART-1 Add-on)
+#13. ⭐ Extra Interview Questions (PART-1 Add-on)
 
 Q: Is Spring Boot suitable for large applications?
 ✅ Yes, with proper modular structure.
@@ -150,7 +154,7 @@ Q: Can we disable auto-configuration?
 @SpringBootApplication(exclude = DataSourceAutoConfiguration.class)
 
 
-##12. @SpringBootApplication
+#14. @SpringBootApplication
 
 @SpringBootApplication ek meta-annotation hai
 (matlab ye multiple annotations ka combination hai).
@@ -159,7 +163,7 @@ Q: Can we disable auto-configuration?
 
 ####  @SpringBootApplication is a combination of multiple Spring annotations that enable auto-configuration, component scanning, and Java-based configuration.
 
-##12.1: ✅ Internally ye 3 main annotations ka combo hai:
+##14.1: ✅ Internally ye 3 main annotations ka combo hai:
 
 @SpringBootApplication
    ↓
@@ -167,7 +171,7 @@ Q: Can we disable auto-configuration?
 @EnableAutoConfiguration
 @ComponentScan
 
-##12.2: @Configuration – Kya karta hai?
+##14.2: @Configuration – Kya karta hai?
 
 @Configuration batata hai ki
 👉 ye class ek configuration class hai, java based configuration.
@@ -185,7 +189,7 @@ public class AppConfig {
     }
 }
 
-##12.3: @EnableAutoConfiguration – MOST IMPORTANT 🔥
+##14.3: @EnableAutoConfiguration – MOST IMPORTANT 🔥
 
 Spring Boot ko bolta hai:
 
@@ -214,7 +218,7 @@ Behind the scenes:
 -> Uses spring.factories
 -> Uses @Conditional annotations
 
-##12.4: @ComponentScan – Kya karta hai?
+##14.4: @ComponentScan – Kya karta hai?
 
 Spring ko bolta hai:
 
@@ -233,10 +237,10 @@ Main class ke package se niche sab scan hota hai.
 
 👉 Sab beans auto register ho jaate hain.
 
-##12.5: Agar @ComponentScan ka scope change karna ho?
+##14.5: Agar @ComponentScan ka scope change karna ho?
 @ComponentScan(basePackages = "com.myproject")
 
-##12.6: Full Code: @SpringBootApplication Internals
+##14.6: Full Code: @SpringBootApplication Internals
 
 @SpringBootApplication
 public class MyApplication {
@@ -255,7 +259,7 @@ Internally equivalent to:
 public class MyApplication {
 }
 
-##12.7: SpringApplication.run() kya karta hai?
+##14.7: SpringApplication.run() kya karta hai?
 Ye internally:
 1. ApplicationContext create karta hai
 2. Beans load karta hai
@@ -267,7 +271,7 @@ Ye internally:
 SpringApplication.run() bootstraps the Spring Boot application.
 
 
-##12.8: Common Interview Questions on @SpringBootApplication
+##14.8: Common Interview Questions on @SpringBootApplication
 
 Q1: Kya hum teeno annotations alag-alag use kar sakte hain?
 
@@ -289,7 +293,7 @@ Q3: Agar @ComponentScan hata dein?
 ❌ Controllers, services detect nahi honge
 404 error aayega
 
-##12.9: 🔟 Extra Missed Topics (PART-1 Additions)
+#15: 🔟 Extra Missed Topics (PART-1 Additions)
 🔹 What is IOC Container?
 
 Spring ka core engine jo:
@@ -326,7 +330,7 @@ Classes ek-dusre pe tightly depend na karein
 
 📌 Interview answer (short & smart)
 
-We usually create Spring Boot projects using Spring Initializr because it generates a ready-to-run project with correct dependencies.
+We usually create Spring Boot projects using Spring Initializr because it generates a **ready-to-run project** with correct dependencies.
 
 #2. Maven vs Gradle (Interview Favorite)
 
@@ -340,7 +344,7 @@ We usually create Spring Boot projects using Spring Initializr because it genera
 
 📌 3.5 yrs experience answer
 
-I mostly use Maven as it is widely adopted and easy to manage in enterprise projects.
+-> I mostly use Maven as it is widely **adopted and easy to manage** in enterprise projects.
 
 #3. Spring Boot Project Structure (VERY IMPORTANT 🔥)
 Default structure:
@@ -450,7 +454,7 @@ Spring Boot allows only one active format at a time
 
 #11. Packaging: JAR vs WAR
 
-| JAR             | WAR                   |
+| JAR(app+server) | WAR(app)              |
 | --------------- | --------------------- |
 | Standalone      | Needs external server |
 | Embedded Tomcat | External Tomcat       |
@@ -486,7 +490,7 @@ JAR containing:
 
 #🔥 SECTION-A : CORE SPRING / SPRING BOOT ANNOTATIONS
 
-##1. @Component
+#1. @Component
 
 -> Generic annotation to create Spring bean.
 
@@ -496,7 +500,7 @@ public class EmailUtil {
 
 📌 Spring automatically object bana deta hai.
 
-##2. @Service
+#2. @Service
 
 -> Business logic layer ke liye
 
@@ -508,9 +512,10 @@ public class UserService {
 
 @Service is a specialization of @Component used for business logic.
 
-##3. @Repository
+#3. @Repository
 
 -> DAO / DB layer ke liye
+-> use for operation like CRUD.
 
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
@@ -519,7 +524,7 @@ public interface UserRepository extends JpaRepository<User, Long> {
 📌 Extra benefit
 ✔ Converts DB exceptions into Spring exceptions
 
-##4. @Controller vs @RestController
+#4. @Controller vs @RestController
 @Controller
 -> Used for MVC (HTML / JSP)
 
@@ -534,9 +539,10 @@ public class UserController {
 📌 Internally
 @RestController = @Controller + @ResponseBody
 
-##5️. @Autowired
+#5️. @Autowired
 
 -> Dependency Injection ke liye
+-> Inject Dependency automatically.
 
 @Autowired
 private UserService userService;
@@ -544,7 +550,7 @@ private UserService userService;
 📌 Best practice
 👉 Constructor Injection use karo (interview favorite)
 
-##6. @Qualifier & @Primary
+#6. @Qualifier & @Primary
 Problem:
 
 -> 2 beans same type ke ho
@@ -556,7 +562,7 @@ OR
 
 @Primary
 
-##7️. @Configuration & @Bean
+#7️. @Configuration & @Bean
 
 @Configuration
 public class AppConfig {
@@ -573,15 +579,15 @@ public class AppConfig {
 
 #🌐 SECTION-B : WEB / MAPPING ANNOTATIONS (VERY IMPORTANT 🔥)
 
-##8️. @RequestMapping
+#8️. @RequestMapping
 -> Base URL mapping
 @RequestMapping("/api")
 
-##9️. @GetMapping, @PostMapping, @PutMapping, @DeleteMapping
+#9️. @GetMapping, @PostMapping, @PutMapping, @DeleteMapping
 @GetMapping("/users")
 public List<User> getUsers() {}
 
-##10. @PathVariable
+#10. @PathVariable
 ->URL se value lene ke liye (Extract value from URL path)
 
 @GetMapping("/users/{id}")
@@ -589,7 +595,7 @@ public User getUser(@PathVariable Long id) {}
 
 📌 /users/10
 
-##11. @RequestParam
+#11. @RequestParam
 -> Query param ke liye (Extract value from the queary string)
 
 @GetMapping("/users")
@@ -597,18 +603,18 @@ public List<User> getByStatus(@RequestParam String status) {}
 
 📌 /users?status=ACTIVE
 
-##12. @RequestBody
+#12. @RequestBody
 -> JSON request ko object me convert karta hai
 
 @PostMapping("/users")
 public User save(@RequestBody User user) {}
 
-##13. @ResponseBody
+#13. @ResponseBody
 -> Java object → JSON
 
 (Already included in @RestController)
 
-##14. @CrossOrigin
+#14. @CrossOrigin
 -> CORS issue solve karta hai
 
 @CrossOrigin(origins = "*")
@@ -616,49 +622,49 @@ public User save(@RequestBody User user) {}
 
 #🗄️ SECTION-C : JPA ANNOTATIONS + MAPPING (🔥🔥)
 
-##15. @Entity
+#15. @Entity
 -> Table ko represent karta hai
 
 @Entity
 public class User {
 }
 
-##16. @Table
+#16. @Table
 -> Table name define karne ke liye
 
 @Table(name="users")
 
-##17. @Id & @GeneratedValue
+#17. @Id & @GeneratedValue
 @Id
 @GeneratedValue(strategy = GenerationType.IDENTITY)
 private Long id;
 
-##18. @Column
+#18. @Column
 @Column(nullable=false, unique=true)
 private String email;
 
 
 #🔥 RELATIONSHIP MAPPING (VERY VERY IMPORTANT)
 
-##19. One-to-One Mapping
+#19. One-to-One Mapping
 @OneToOne
 @JoinColumn(name="profile_id")
 private Profile profile;
 
 📌 Real example: User → Profile
 
-##20. One-to-Many Mapping
+#20. One-to-Many Mapping
 @OneToMany(mappedBy="user")
 private List<Order> orders;
 
 📌 One User → Many Orders
 
-##21. Many-to-One Mapping
+#21. Many-to-One Mapping
 @ManyToOne
 @JoinColumn(name="user_id")
 private User user;
 
-##22. Many-to-Many Mapping
+#22. Many-to-Many Mapping
 @ManyToMany
 @JoinTable(
   name="user_roles",
@@ -667,7 +673,7 @@ private User user;
 )
 private List<Role> roles;
 
-##23. Fetch Type: Lazy vs Eager
+#23. Fetch Type: Lazy vs Eager
 
 | Lazy                    | Eager             |
 | ----------------------- | ----------------- |
@@ -682,7 +688,7 @@ Lazy loading is preferred to avoid unnecessary DB calls.
 
 ########################## 🔍 SECTION-D : JPQL & QUERY METHODS 🔥 ##########################
 
-##24. What is JPQL?
+#24. What is JPQL?
 
 -> JPQL = Java Persistence Query Language
 -> Works on Entity names
@@ -692,7 +698,7 @@ Example:
 @Query("SELECT u FROM User u WHERE u.status = :status")
 List<User> findByStatus(String status);
 
-##25. Native Query
+#25. Native Query
 
 -> Direct SQL query
 
@@ -703,7 +709,7 @@ List<User> getActiveUsers();
 -> Complex query
 -> Performance critical
 
-##26. JPQL vs Native Query
+#26. JPQL vs Native Query
 
 | JPQL           | Native      |
 | -------------- | ----------- |
@@ -711,17 +717,22 @@ List<User> getActiveUsers();
 | DB independent | DB specific |
 | Safe           | Powerful    |
 
-##27. Query Methods (Auto Queries)
+#27. Query Methods (Auto Queries)
 List<User> findByEmail(String email);
 List<User> findByStatusAndRole(String status, String role);
 
 📌 Spring automatically SQL bana deta hai.
 
-##28. agination & Sorting
-Page<User> findAll(Pageable pageable);
-PageRequest.of(0,10, Sort.by("name"))
+#28. Pagination & Sorting
+Sort sort = Sort.by("id").descending();
+Pageable pageable = PageRequest.of(page, size, sort);
+Page<Employee> getEmployee = employeeRepo.findAll(pageable);
 
-##29. INTERVIEW TRICK QUESTIONS (PART-3)
+######Repository
+Page<User> findAll(Pageable pageable);
+
+
+#29. INTERVIEW TRICK QUESTIONS (PART-3)
 Q: mappedBy kya karta hai?
 👉 Relationship ka owner define karta hai.
 
@@ -732,7 +743,7 @@ Parent save → child auto save
 Q: Why use @Repository?
 👉 Exception translation + DB layer identity
 
-##30. Dependency Injection 
+#30. Dependency Injection 
 
 -> Jab ek class apni dependency khud create na karke Spring se leti hai → DI
 
@@ -757,7 +768,7 @@ public class UserService {
 -> Immutable class nahi bana sakte
 
 📌 Interview line
-Field injection is not recommended due to poor testability.
+**Field injection is not recommended due to poor testability.**
 
 2. Setter Injection (⚠️ Limited use)
 
@@ -791,7 +802,7 @@ public class UserService {
 
 📌 Golden Interview Answer
 
-Constructor Injection ensures immutability, better testability, and makes dependencies explicit.
+**Constructor Injection ensures immutability, better testability, and makes dependencies explicit.**
 
 ##31. @Qualifier & @Primary (Bean Conflict Problem)
 
@@ -800,12 +811,12 @@ Constructor Injection ensures immutability, better testability, and makes depend
 
 ####################################### PART-4 : IOC Container, Bean Lifecycle, Scopes & Circular Dependency ##########################################
 
-##1. IOC (Inversion of Control)
+#1. IOC (Inversion of Control)
 Object creation ka control Spring ke paas hota hai, developer ke paas nahi
--> Spring Boot uses ApplicationContext as IOC container.
+-> Spring Boot uses **ApplicationContext as IOC container.**
 
 ##2. What is a Bean?
-Bean = Java object managed by Spring
+Bean = **Java object** managed by Spring
 
 Bean ka lifecycle:
 -> Creation
@@ -1074,7 +1085,7 @@ Method-1: Exclude in main class
  exclude = DataSourceAutoConfiguration.class
 )
 
-Method-2: properties file
+Method-2: .properties file
 spring.autoconfigure.exclude=\
 org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
 
@@ -1197,7 +1208,7 @@ REST APIs are stateless and resource-based.
 ##4. HTTP Methods (Interview Favourite)
 1. GET
 Data read
-Idempotent
+Idempotent - Multiple time execute krne pr bhi system ka final result same hi rhe.r-
 
 @GetMapping("/users")
 
@@ -1317,7 +1328,7 @@ try {
 
 📌 Interview me ❌
 
-##8.4: ✅ 9️⃣ @ExceptionHandler
+##8.4: @ExceptionHandler
 @ExceptionHandler(UserNotFoundException.class)
 public ResponseEntity<String> handle(UserNotFoundException ex) {
 
@@ -1422,6 +1433,31 @@ public class UserNotFoundException extends RuntimeException {
 
 Ab jab bhi UserNotFoundException throw hogi →
 Automatically 404 status return hoga.
+
+##
+
+Q: Should we catch exception in service?
+
+👉 ❌ No (let it propagate)
+
+Q: Where to put @Transactional?
+
+👉 Service layer
+
+Q: Why RuntimeException preferred?
+
+👉 Auto rollback + clean code
+
+🔹 EXTRA (Often Asked)
+🔸 Spring Boot Default Error Handling
+
+/error endpoint
+Controlled by BasicErrorController
+
+🔸 Customize Error Page
+
+Override ErrorController
+
 
 
 
@@ -1676,32 +1712,6 @@ Q: Self-invocation works?
 
 
 
-
-########################## PART-8 = Exception Handling (Deep Dive + Production Scenarios) ##########################################
-Q: Should we catch exception in service?
-
-👉 ❌ No (let it propagate)
-
-Q: Where to put @Transactional?
-
-👉 Service layer
-
-Q: Why RuntimeException preferred?
-
-👉 Auto rollback + clean code
-
-🔹 EXTRA (Often Asked)
-🔸 Spring Boot Default Error Handling
-
-/error endpoint
-Controlled by BasicErrorController
-
-🔸 Customize Error Page
-
-Override ErrorController
-
-
-
 ##################################  PART-9 : Spring Boot Security (Complete + Interview Ready)  #######################################
 
 #PART 1 – SPRING SECURITY BASICS
@@ -1715,6 +1725,10 @@ Spring Security is a powerful authentication & authorization framework for Sprin
 📌 Interview Line:
 
 Spring Security provides authentication, authorization, and protection against common attacks like CSRF.
+
+#1.Basic Authentication
+#2.Token-Based Authentication
+#3.OAuth2
 
 #PART 2 – BASIC AUTHENTICATION
 🧩 Concept
@@ -1867,6 +1881,121 @@ Q: Difference Basic vs JWT?
 | Simple            | Scalable    |
 
 
+#################################################
+
+#Important - Full Flow of JWT AUTHENTICATION (TOKEN-BASED)
+
+##1. APP START
+
+APP START
+  └─ SecurityConfig
+       ├─ filterChain (public + secured + JWT filter)
+       │     ├─ csrf.disable()                 // CSRF off
+       │     ├─ requestMatchers("/login","/register").permitAll() // public endpoints
+       │     ├─ anyRequest().authenticated()  // token required for others
+       │     ├─ sessionCreationPolicy(STATELESS) // no session
+       │     └─ addFilterBefore(jwtRequestFilter) // JWT हर request पर run
+       │
+       ├─ passwordEncoder (BCrypt)
+       │     └─ use: encode() / matches()  // register / login
+       │
+       └─ authenticationProvider
+             ├─ DaoAuthenticationProvider
+             ├─ setUserDetailsService(EmployeeService)
+             └─ setPasswordEncoder(BCrypt)
+                  // Spring internally login/authentication ke liye use
+				  
+
+##2. REGISTER FLOW
+
+REGISTER
+  └─ SecurityFilterChain
+       └─ permitAll (no token required)
+  └─ Controller (@PostMapping("/register"))
+       ├─ @Valid → request body EmployeeDTO
+       └─ field validation
+  └─ Service
+       ├─ repo.findByContactNumber()  // check duplicate
+       ├─ passwordEncoder.encode(password) // hash password
+       │     → "aman123" → "$2a$10$hash..."
+       ├─ Employee object set (name, username, role, privilege, active)
+       └─ repo.save() → DB insert
+  └─ Response → 201 CREATED + saved employee
+
+
+##3. LOGIN FLOW
+
+LOGIN
+  └─ SecurityFilterChain
+       └─ permitAll (no token required)
+  └─ Controller
+       └─ request body read → username + password
+  └─ Service
+       ├─ repo.findByUserName() → DB fetch user
+       ├─ passwordEncoder.matches(raw, encoded) → verify password
+       ├─ role mapping
+       │     ├─ "gm" → ROLE_ADMIN
+       │     └─ "stakeholder" → ROLE_USER
+       ├─ JWT claims create (payload)
+       │     ├─ user_id
+       │     ├─ user_name
+       │     └─ role ("ROLE_ADMIN")
+       └─ JwtUtil.generateToken()
+             ├─ setClaims(claims)           // custom data
+             ├─ setSubject(username)        // identifies user
+             ├─ setIssuedAt(new Date())     // creation time
+             ├─ setExpiration(now + 10 min) // expiry
+             ├─ signWith(secretKey, HS256)  // signature
+             └─ compact()                   // final token
+  └─ Response → "Authorization: Bearer eyJhbGciOiJIUzI1Ni..."
+
+
+##4. API CALL (SECURED)
+
+SECURED API CALL
+  └─ SecurityFilterChain
+       ├─ anyRequest().authenticated() // token mandatory
+       └─ JWT filter runs for every request
+
+  └─ JwtRequestFilter
+       ├─ getHeader("Authorization") → request.getHeader("Authorization")
+       ├─ extract token → header.substring(7)
+       ├─ parse JWT → Claims
+       │     └─ Jwts.parserBuilder().setSigningKey(secretKey).build().parseClaimsJws(token).getBody()
+       ├─ extract username → claims.getSubject()
+       ├─ check SecurityContext
+       │     └─ if authentication == null → user not logged in yet
+       ├─ loadUserByUsername(username) → EmployeeService
+       │     └─ repo.findByUserName() → EmployeePrincipal(emp)
+       │           └─ implements UserDetails
+       │                 ├─ getAuthorities() → ROLE from DB / JWT
+       │                 ├─ getPassword() → hashed password
+       │                 └─ getUsername() → username
+       ├─ validate token
+       │     ├─ username match
+       │     └─ !isTokenExpired()
+       ├─ extract role → claims.get("role") → "ROLE_ADMIN"
+       ├─ create authority → new SimpleGrantedAuthority(role)   //yha pr role ki list add ho jati h jo @PreAuthorize me use hoti h
+       ├─ create Authentication
+       │     → UsernamePasswordAuthenticationToken(userDetails, null, authorities)
+       └─ set SecurityContext → SecurityContextHolder.getContext().setAuthentication(auth)
+             🔥 user authenticated
+			 
+			 
+##5. CONTROLLER + SERVICE + DB
+
+Controller
+  ├─ @PreAuthorize("hasRole('ADMIN')")
+  │     ├─ Spring reads Authentication from SecurityContext
+  │     ├─ authorities from EmployeePrincipal or JWT claims
+  │     └─ role check → ROLE_ADMIN present? → allow/403
+  ├─ Service → business logic
+  ├─ DB → fetch/update/insert
+  └─ Response → 200 / 201 / 403
+  
+
+#########################################################
+
 # PART 4 – OAUTH 2.0
 
 ## 1.What is OAuth2?
@@ -1889,7 +2018,7 @@ Used for:
 2. Redirect to Google
 3. User grants permission
 4. Google issues Access Token
-5. Client sends token to backend
+5. Client(App) sends token to backend
 6. Backend validates token
 7. Access granted
 
@@ -1981,7 +2110,7 @@ public DataSource devDataSource() {
 
 => Only active when dev profile enabled.
 
-#7. 🔥 7️⃣ Multiple Profiles
+#7. Multiple Profiles
 
 spring.profiles.active=dev,swagger
 
@@ -2347,7 +2476,7 @@ d.)Usability Testing -> Tests user-friendliness.
 
 
 ##Mockito -->
-Mockito is used with JUnit 5 to mock dependencies in unit tests so that you can test a class in isolation without relying on real implementations.
+Mockito is used with JUnit 5 to mock(fake) dependencies in unit tests so that you can test a class in isolation without relying on real implementations.
 Mockito ek mocking framework hai jo humare test me fake objects (mocks) banata hai taaki hum dependencies ke bina apni class test kar sakein.
 
 ##Annotations ==>
@@ -2452,7 +2581,7 @@ Matlab — ye aapke Java project ko banane (build karne), manage karne aur packa
 
 Maven ek tool hai jo project ki libraries manage karta hai aur project ko build karke runnable file(.war ya .jar) banata hai.
 
-#2. aven Lifecycle
+#2. Maven Lifecycle
 clean → compile → test → package → install → deploy
 
 #3. pom.xml (VERY IMPORTANT)

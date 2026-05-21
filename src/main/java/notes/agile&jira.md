@@ -74,7 +74,7 @@ Sprint me selected tasks:
 -> Registration
 
 
-##4.3: Sprint
+##4.3: Sprint (2-3 weeks) 
 Sprint ek fixed time period hota hai.
 
 Usually:

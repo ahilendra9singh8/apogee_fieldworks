@@ -65,7 +65,7 @@ kubectl apply -f app.yaml
 
 # Kubernetes kya hai?
 
-Kubernetes (k8s) ek open-source container orchestration platform hai jo containers (jaise Docker) ko automate karta hai—deployment, scaling, aur management ke liye.
+Kubernetes (k8s) ek open-source container orchestration platform hai jo containers (jaise Docker) ko automate karta hai — deployment, scaling, aur management ke liye.
 Socho aapke paas 100 containers hain—Kubernetes unhe smartly handle karta hai. Jaise ek traffic police jo sab gadiyon ko control karta hai.
 
 Kubernetes is an open-source platform that helps you manage, deploy, and scale containers automatically.

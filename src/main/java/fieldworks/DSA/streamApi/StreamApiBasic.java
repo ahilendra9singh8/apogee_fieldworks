@@ -21,6 +21,8 @@ public class StreamApiBasic {
 		// }
 		// });
 		//
+        //Collections.sort(list, (a, b) -> a.compareTo(b));
+		//
 		// java 8
 		//
 		// list.sort(Integer::compareTo); //🔹 Java 8 me sort (ascending)
