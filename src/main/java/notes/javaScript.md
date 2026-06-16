@@ -1096,7 +1096,7 @@ Success API
 #🟢 SECTION 14: async / await (🔥 REAL WORLD 🔥)
 
 #73. async/await kya hai? (Definition)
-async/await Promises ko synchronous-looking code me likhne ka tarika hai.
+async/await Promises(asynchronous) ko synchronous-looking code me likhne ka tarika hai.
 
 #74. async function hamesha kya return karta hai?
 👉 Promise

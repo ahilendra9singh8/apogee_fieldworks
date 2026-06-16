@@ -1,3 +1,13 @@
+11. What is the difference between method and constructor?
+22. Why String is Immutable in Java
+
+8. What is Association, Aggregation, and Composition?
+10. Marker Interface
+
+
+###################################################  Start Here ############################
+
+
 1. Why is Java Platform Independent?
 
 Because Java code is compiled into bytecode, which runs on the JVM (Java Virtual Machine) —
@@ -93,7 +103,7 @@ System.out.println(s1.equals(s2)); // true
 | Has return type   | No return type          |
 | Called manually   | Called automatically    |
 | Used for behavior | Used for initialization |
-  can override        not override
+| can override      | not override            |
 
 
 12. What is this keyword?
@@ -423,6 +433,13 @@ public class Test {
 
 child class uses all attributes and methods of a parent class.
 
+Types of Inheritance=>
+2.1: Single Inheritance
+2.2: Multilevel Inheritance
+2.3: Heirarical Inheritance
+2.4: Multiple Inheritance (Not Supported)
+2.5: Hybrid Inheritance (Not Supported)
+
 
 3. Encapsulation
 
@@ -430,8 +447,9 @@ Binding data and methods into one unit (class).
 
 ✅ Why useful: Prevents direct access → increases security and data control.
 
+4. PolyMorphism
 
-4.Abstraction(Abstract, Interface)
+5.Abstraction(Abstract, Interface)
 
 Abstraction hides internal implementation and showing features(functionality).
 
@@ -1089,7 +1107,7 @@ Finally block always executes
 finally block runs even if exception occurs or not, or even after return.
 
 
-5.hrow keyword
+5.Throw keyword
 
 throw is used to manually throw an exception.
 
@@ -1330,7 +1348,7 @@ Finalize method called
 ######################       Multithreading in Java   ##########################
 
 
-1.Multithreading
+#1.Multithreading
 
 Multithreading means executing multiple threads simultaneously to make the program faster and more efficient.
 Each thread is a lightweight sub-process that runs independently.
@@ -1339,7 +1357,7 @@ Each thread is a lightweight sub-process that runs independently.
 A web browser downloads a file, plays music, and lets you type at the same time — each activity runs in a separate thread.
 
 
-2️. Thread vs Process
+#2️. Thread vs Process
 
 | Feature       | Process             | Thread                                      |
 | ------------- | ------------------- | ------------------------------------------- |
@@ -1349,11 +1367,11 @@ A web browser downloads a file, plays music, and lets you type at the same time 
 | Example       | MS Word             | Spell-check + autosave + UI refresh threads |
 
 
-3️. How to Create a Thread in Java
+#3️. How to Create a Thread in Java
 
 There are two main ways to create a thread:
 
-🧮 Method 1: By Extending Thread Class
+##🧮 Method 1: By Extending Thread Class
 
 class MyThread extends Thread {
 
@@ -1372,7 +1390,7 @@ run() contains the code to execute in a thread.
 start() starts a new thread and internally calls run().
 
 
-🧮 Method 2: By Implementing Runnable Interface
+##🧮 Method 2: By Implementing Runnable Interface
 
 class MyRunnable implements Runnable {
 
@@ -1392,7 +1410,7 @@ Because Java supports multiple inheritance via interfaces, using Runnable gives 
 
 
 
-4. Thread Lifecycle
+#4. Thread Lifecycle
 
 | State                        | Description                    |
 | ---------------------------- | ------------------------------ |
@@ -1403,7 +1421,7 @@ Because Java supports multiple inheritance via interfaces, using Runnable gives 
 | **Dead/Terminated**          | Execution finished             |
 
 
-5. Important Thread Methods
+#5. Important Thread Methods
 
 | Method             | Description                                      |
 | ------------------ | ------------------------------------------------ |
@@ -1418,7 +1436,7 @@ Because Java supports multiple inheritance via interfaces, using Runnable gives 
 | `currentThread()`  | Returns reference to currently executing thread  |
 
 
-6. Example: Using sleep() and join()
+#6. Example: Using sleep() and join()
 
 class DemoThread extends Thread {
 
@@ -1444,7 +1462,7 @@ public class Main {
 
 
 
-7. Thread Priorities
+#7. Thread Priorities
 
 Every thread has a priority (1–10).
 1. Thread.MIN_PRIORITY = 1
@@ -1454,7 +1472,7 @@ Every thread has a priority (1–10).
 Higher priority threads may execute before lower ones (depends on OS).
 
 
-8. Synchronization
+#8. Synchronization
 
 When multiple threads access a shared resource, race conditions can occur.
 To prevent this, we use synchronization.
@@ -1515,7 +1533,7 @@ class Table {
 
 
 
-9. Inter-Thread Communication (wait(), notify(), notifyAll())
+#9. Inter-Thread Communication (wait(), notify(), notifyAll())
 
 Used when threads need to communicate — for example, producer-consumer problems.
 
@@ -1554,14 +1572,14 @@ public class Main {
 }
 
 
-10️. Daemon Thread
+#10️. Daemon Thread
 
 1. Deamon Thread is a service provider thread that provide services to the user thread.
 2. Garbage collector is best example of Daemon Thread.
 3. A daemon thread runs in the background — JVM ends it when all user threads finish.
 
 
-11. Thread Pool (Executor Framework)
+#11. Thread Pool (Executor Framework)
 
 Instead of creating new threads every time → use a thread pool.
 
@@ -1569,7 +1587,7 @@ Creating many threads every time = slow + heavy.
 Thread pool → reuses fixed threads → fast & efficient.
 
 
-12. Common Interview Questions
+#12. Common Interview Questions
 
 | Question                              | Short Answer                                          |
 | ------------------------------------- | ----------------------------------------------------- |
@@ -1586,7 +1604,7 @@ Thread pool → reuses fixed threads → fast & efficient.
 
 
 
-13. Example Showing All Important Methods
+#13. Example Showing All Important Methods
 
 class MyThread extends Thread {
 
@@ -1622,7 +1640,7 @@ public class Demo {
 }
 
 
-14. Thread Priority — Simple Explanation + Example
+#14. Thread Priority — Simple Explanation + Example
 
 Priority range: 1 to 10
 1 → MIN_PRIORITY
@@ -1633,6 +1651,7 @@ Priority range: 1 to 10
 
 
 class PriorityThread extends Thread {
+
     public void run() {
         System.out.println(getName() + " Priority: " + getPriority());
     }
@@ -1654,7 +1673,7 @@ public class Main {
 
 
 
-15. Difference: wait() vs sleep()
+#15. Difference: wait() vs sleep()
 
 | wait()                         | sleep()                 |
 | ------------------------------ | ----------------------- |
@@ -1664,14 +1683,14 @@ public class Main {
 | Defined in Object class        | Defined in Thread class |
 
 
-16. synchronized keyword
+#16. synchronized keyword
 
 Used to prevent race conditions.
 
 synchronized void print() { }
 
 
-17. volatile keyword (FAQ)
+#17. volatile keyword (FAQ)
 
 Guarantees visibility of variable changes across threads.
 
@@ -1683,12 +1702,14 @@ volatile boolean flag = true;
 Jab multiple threads same object ko simultaneously access karein, tab bhi data inconsistent na ho, race condition na aaye, aur output predictable rahe.
 
 Examples of thread-safe classes:
-1. StringBuffer
-2. ConcurrentHashMap
-3. Vector
-4. AtomicInteger
 
-1. StringBuffer
+##1. StringBuffer
+##2. ConcurrentHashMap
+##3. Vector
+##4. AtomicInteger
+##5. Hashtable
+
+##1. StringBuffer
 
 StringBuffer is thread-safe because all its methods are synchronized.
 Only one thread can modify a StringBuffer at a time
@@ -1717,7 +1738,7 @@ Since StringBuffer is synchronized,
 👉 output always consistent (e.g., “AAAABBBB…”).
 
 
-2. Vector
+##2. Vector
 
 Vector is also thread-safe because all methods are synchronized.
 It is the thread-safe version of ArrayList.
@@ -1740,7 +1761,7 @@ t2.start();
 👉 No race condition, safe for multi-threading.
 
 
-3. ConcurrentHashMap
+##3. ConcurrentHashMap
 
 ConcurrentHashMap is a highly optimized, thread-safe Map used in multi-threaded applications.
 
@@ -1769,7 +1790,7 @@ t2.start();
 
 
 
-4. AtomicInteger
+##4. AtomicInteger
 
 AtomicInteger uses non-blocking lock-free CAS (Compare-And-Swap) technique.
 
@@ -1828,7 +1849,7 @@ A lock-free, thread-safe integer using CAS operations.
 
 #1. QUEUE INTERFACE
 
-1.1: PriorityQueue
+##1.1: PriorityQueue
 ✔ Definition
 -> Min-heap (smallest comes first)
 -> Not thread-safe
@@ -1846,7 +1867,7 @@ Output:
 10
 [20, 30]
 
-1.2: Deque → ArrayDeque
+##1.2: Deque → ArrayDeque
 ✔ Definition
 -> Double-ended queue
 -> Fastest implementation
@@ -1864,7 +1885,7 @@ Output:
 
 #2.MAP INTERFACE
 
-2.1: ConcurrentHashMap
+##2.1: ConcurrentHashMap
 ✔ Definition
 -> Thread-safe
 -> High performance
@@ -1880,7 +1901,7 @@ Output:
 {A=1, B=2}
 
 
-3.⭐ HashSet vs TreeSet vs LinkedHashSet
+#3.⭐ HashSet vs TreeSet vs LinkedHashSet
 
 | Feature | HashSet | LinkedHashSet   | TreeSet     |
 | ------- | ------- | --------------- | ----------- |
@@ -1889,7 +1910,7 @@ Output:
 | Null    | Allowed | Allowed         | Not allowed |
 
 
-4.⭐ HashMap vs LinkedHashMap vs TreeMap
+#4.⭐ HashMap vs LinkedHashMap vs TreeMap
 
 | Feature  | HashMap | LinkedHashMap   | TreeMap     |
 | -------- | ------- | --------------- | ----------- |
@@ -1898,7 +1919,7 @@ Output:
 | Null key | Allowed | Allowed         | Not allowed |
 
 
-5. ⭐ HashMap vs ConcurrentHashMap
+#5. ⭐ HashMap vs ConcurrentHashMap
 
 | Feature     | HashMap | ConcurrentHashMap |
 | ----------- | ------- | ----------------- |
@@ -1908,9 +1929,9 @@ Output:
 | Fail-fast   | Yes     | No (fail-safe)    |
 
 
-6. Most Important Interview Code
+#6. Most Important Interview Code
 
-6.1: ⭐ Fail-Fast Example (HashMap)
+##6.1: ⭐ Fail-Fast Example (HashMap)
 
 HashMap<Integer, String> map = new HashMap<>();
 map.put(1, "A");
@@ -1924,7 +1945,7 @@ for(Integer i : map.keySet()) {
 Output:
 ConcurrentModificationException
 
-6.2: ⭐ Fail-Safe Example (ConcurrentHashMap)
+##6.2: ⭐ Fail-Safe Example (ConcurrentHashMap)
 
 ConcurrentHashMap<Integer, String> map = new ConcurrentHashMap<>();
 map.put(1, "A");
@@ -1939,7 +1960,7 @@ Output:
 {1=A, 2=B, 3=C}
 
 
-7. HashMap Internal Working (Simple & Accurate)
+#7. HashMap Internal Working (Simple & Accurate)
 
 ⭐ When you call map.put(key, value):
 
@@ -1957,6 +1978,7 @@ Step 3 → Check bucket
 Step 4 → If bucket is empty → insert Node
 Step 5 → If bucket already has a node (hash collision)
 => Java compares hash
+=> then index
 => Then compares key using equals()
 → If same key → replace value
 → If different key → add new node → linked list
@@ -1982,7 +2004,7 @@ Bucket 4 has Node(A,10)
 → compare equals(keys)
 → keys are different → append to linked list
 
-## HashMap has an array called table those 0 to 16 index and threshold value is 12, when use .put(key, value) method so create a hashcode than        index using hashcode these according index match table index insert key,value on perticular index.
+## HashMap has an array called table those 0 to 16 index and threshold value is 12, when use .put(key, value) method so create a hashcode than index using hashcode these according index match table index insert key,value on perticular index.
 
 
 8. HashSet Internal Working
@@ -2333,7 +2355,7 @@ Interview Qs / Tips
 
 #6. FUNCTIONAL INTERFACE
 
-Examples: Runnable, Callable, Comparator, Consumer, Supplier, Function, Predicate.
+Examples: Runnable, Callable, Comparable, Comparator, Predicate, Consumer, Supplier, Function.
 
 
 Example — create custom functional interface

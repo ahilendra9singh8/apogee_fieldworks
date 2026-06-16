@@ -52,7 +52,7 @@ CREATE TABLE users (
 );
 
 #6. What is a Primary Key?
-A Primary Key uniquely identifies each record in a table.
+A Primary Key uniquely identifies each record(row) in a table.
 
 ✔️ Must be UNIQUE
 ✔️ Cannot be NULL
@@ -394,7 +394,7 @@ Constraints enforce rules on data.
 Constraints MySQL me rules hote hain jo table ke data ko sahi aur safe rakhte hain.
 Ye galat, duplicate ya incomplete data ko database me enter hone se rok dete hain.
 
-##2.1: 1️⃣ PRIMARY KEY
+##2.1: PRIMARY KEY
 ✔️ Unique
 ✔️ Not NULL
 ✔️ One per table
@@ -1339,7 +1339,7 @@ Why PostgreSQL is preferred in analytics?
 ##7.2: PreparedStatement (🔥 SECURITY)
 ❓ Why PreparedStatement?
 
-✔️ Prevents SQL Injection
+✔️ Prevents SQL Injection(Cyber Attack)
 ✔️ Faster execution
 ✔️ Precompiled query
 
@@ -1366,7 +1366,7 @@ SELECT * FROM users ORDER BY id LIMIT 10 OFFSET 20;
 ###Spring Data
 PageRequest.of(2, 10);
 
-==> springboot me page index 0 se start hota h to yha pr 2 third page hi h like(0,1,2)
+==> springboot me page index 0 se start hota h to yha pr 2, third page hi h like(0,1,2)
 
 ##7.5: MYSQL TRANSACTION vs @Transactional
 

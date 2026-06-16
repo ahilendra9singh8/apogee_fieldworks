@@ -685,7 +685,7 @@ Microservices communication with each other ->
 2. Asynchronous -> Message Brokers like RabbitMQ and Apache kafka
 
 Spring cloud ->
-spring cloud is a framework that provides tools for developers to quickly build microservices. its support service discovery, circuit breakers, config server server, API gateway etc.
+spring cloud is a framework that provides tools for developers to quickly build microservices. its support service discovery, circuit breakers, config server, API gateway etc.
 
 Centralized logging in Microservices ->
 collecting logs from multiple services into a single system like ELK Stack (ElaticSearch, Logstash, Kibana) or EFK(with Fluentd) for easier monitoring and debugging.
