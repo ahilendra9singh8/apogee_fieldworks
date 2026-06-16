@@ -2588,3 +2588,83 @@ Solution:
 OR
 
 @Qualifier("beanName")
+
+
+###################  Importants ############################
+
+#1. Base Entity
+
+package com.suryatara.common.entity;
+
+import java.time.LocalDateTime;
+
+import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+@MappedSuperclass
+public class BaseEntity {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private Boolean active = true;
+
+    private LocalDateTime createdAt;
+
+    private LocalDateTime updatedAt;
+
+    @PrePersist
+    public void prePersist() {
+
+        createdAt = LocalDateTime.now();
+        updatedAt = LocalDateTime.now();
+    }
+
+    @PreUpdate
+    public void preUpdate() {
+
+        updatedAt = LocalDateTime.now();
+    }
+}
+
+
+##1.1: @MappedSuperclass
+@MappedSuperclass ek JPA annotation hai jo common fields ko child entities ke saath share karne ke liye use hota hai. Is class ka khud ka table database mein nahi banta, lekin iske fields child entity ke table mein add ho jate hain.
+
+##1.2: @PrePersist
+@PrePersist ek lifecycle callback annotation hai jo entity ko pehli baar database mein save (insert) karne se just pehle automatically execute hota hai.
+
+Common Use:
+createdAt set karna
+Default values initialize karna
+
+##1.3: @PreUpdate
+@PreUpdate ek lifecycle callback annotation hai jo entity ko update karne se just pehle automatically execute hota hai.
+
+Common Use:
+updatedAt timestamp update karna
+
+
+#2. Enum kyu banate hain?
+-> enum ka use fixed aur predefined values ko represent karne ke liye kiya jata hai.
+-> Enum ek special Java type hai jo fixed set of constants ko represent karta hai. Isse invalid values store hone se bachaya jata hai aur code type-safe banta hai.
+
+public enum RoleType {
+
+    ROLE_ADMIN,
+    ROLE_CUSTOMER
+
+}
+
+##2.1: Enum kyu banate hain?
+Fixed values ko represent karne ke liye aur invalid data ko prevent karne ke liye.
+
+##2.2: @Enumerated kya karta hai?
+JPA ko batata hai ki enum value database mein kis format mein store karni hai.
+
+##2.3: EnumType.STRING kya karta hai?
+Enum constant ka naam (jaise ROLE_ADMIN) database mein string ke form mein store karta hai. Ye ORDINAL se safer aur readable hota hai.

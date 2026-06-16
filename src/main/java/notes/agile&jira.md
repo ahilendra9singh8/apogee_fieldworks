@@ -297,3 +297,211 @@ Agile ek development methodology hai jabki Jira ek tool hai jo Agile process ko 
 | Output         | **Working software after every sprint**                   | **Task progress aur project tracking**                             |
 | Dependency     | Agile tool ke bina bhi follow ho sakta hai                | Jira mostly **Agile process ko manage karne ke liye use hota hai** |
 
+
+
+
+
+
+################################################## Scrum ##################################################
+
+#1. Scrum Kya Hai
+Scrum ek Agile framework hai jiska use Agile process ko implement karne ke liye kiya jata hai.
+
+Simple words me:
+👉 Scrum = Agile ko follow karne ka practical way / framework
+
+Agile ek methodology hai, aur Scrum us methodology ko implement karne ka process hai.
+
+#2. Scrum Kyu Use Kiya Jata Hai
+1. Team collaboration improve hoti hai
+2. Work properly manage hota hai
+3. Fast delivery possible hoti hai
+4. Customer feedback jaldi milta hai
+5. Progress easily track hoti hai
+
+#3. Scrum Workflow
+
+Product Backlog
+      ↓
+Sprint Planning
+      ↓
+Sprint (2-3 Weeks)
+      ↓
+Daily Scrum / Standup
+      ↓
+Sprint Review
+      ↓
+Sprint Retrospective
+      ↓
+Next Sprint
+
+
+#4. Scrum Important Concepts
+
+##4.1: Product Backlog
+Product backlog me project ki sabhi requirements/features hoti hain.
+
+Example:
+-> Login
+-> Registration
+-> Dashboard
+-> Payment
+
+##4.2: Sprint Planning
+Team decide karti hai ki next sprint me kaunse tasks complete karne hain.
+
+Example:
+Sprint Duration = 2 Weeks
+
+Selected Tasks:
+-> Login
+-> Registration
+
+##4.3: Sprint
+Sprint ek fixed time period hota hai jisme selected tasks complete kiye jate hain.
+
+Usually:
+-> 2 Weeks
+-> 3 Weeks
+
+Sprint ke end me working software deliver hota hai.
+
+##4.4: Daily Scrum / Standup
+Daily 15 minute meeting hoti hai.
+
+3 Questions:
+1. Kal kya kiya?
+2. Aaj kya karoge?
+3. Koi blocker hai kya?
+
+Example:
+Yesterday: Login API complete ki
+Today: Login UI banaunga
+Blocker: None
+
+##4.5: Sprint Review
+Sprint ke end me completed work customer/client ko demo kiya jata hai.
+
+Example:
+-> Login feature ready hai
+-> Registration ready hai
+
+Customer feedback deta hai.
+
+##4.6: Sprint Retrospective
+Team discuss karti hai:
+-> Kya acha hua
+-> Kya improve karna hai
+
+Example:
+Problem: Testing late hui
+Improvement: Next sprint me testing jaldi start karenge
+
+#5. Scrum Roles
+
+| Role             | Responsibility |
+|------------------|----------------|
+| Product Owner    | Requirements aur priorities manage karta hai |
+| Scrum Master     | Scrum process properly follow karwata hai |
+| Development Team | Development aur testing karti hai |
+
+#6. Agile Aur Scrum Ka Relation
+
+Simple words:
+-> Agile = Methodology / Philosophy
+-> Scrum = Agile implement karne ka framework
+
+Example:
+Agile bolta hai:
+"Software small iterations me develop karo"
+
+Scrum batata hai:
+"Kaise develop karna hai using Sprint, Standup, Review, etc."
+
+#7. Agile vs Scrum Difference
+
+| Point | Agile | Scrum |
+|------|--------|--------|
+| Type | Methodology / Philosophy | Agile Framework |
+| Purpose | Flexible software development | Agile ko implement karna |
+| Nature | Concept | Practical process |
+| Work Style | Iterative development | Sprint-based development |
+| Focus | Customer collaboration & flexibility | Team management & sprint execution |
+| Time Period | Fixed nahi hota | Sprint based (2-3 weeks) |
+| Roles | Specific roles mandatory nahi | Product Owner, Scrum Master, Dev Team |
+| Example | Agile Principles | Sprint Planning, Standup, Review |
+
+################################################## Agile + Scrum + Jira Relation ##################################################
+
+#Simple Relation
+
+👉 Agile = Methodology / Philosophy  
+👉 Scrum = Agile ko implement karne ka framework  
+👉 Jira = Tool jo Scrum/Agile project manage karne ke liye use hota hai
+
+Flow:
+
+Agile Principles
+       ↓
+Scrum Process Follow
+       ↓
+Jira Tool Me Manage
+
+################################################## Real Project Example ##################################################
+
+Suppose company E-commerce Website bana rahi hai.
+
+Agile:
+-> Team iterative development follow karegi
+
+Scrum:
+-> Work ko 2-week sprint me divide kiya jayega
+
+Jira:
+-> Sprint aur tasks Jira me track honge
+
+Example:
+
+Sprint 1:
+-> Login
+-> Registration
+
+Jira Tasks:
+-> Story: User Login
+-> Task: Create Login API
+-> Task: Create Login UI
+-> Bug: Login Validation Issue
+
+################################################## Interview Short Answer (English) ##################################################
+
+#1. What is Agile?
+Agile is a software development methodology in which software is developed in small iterations called sprints. Working software is delivered frequently, and continuous customer feedback is taken.
+
+#2. What is Scrum?
+Scrum is an Agile framework used to manage and execute Agile projects through sprints, daily standups, sprint reviews, and retrospectives.
+
+#3. What is Jira?
+Jira is a project management and issue tracking tool used by Agile and Scrum teams to manage tasks, bugs, sprints, and project progress.
+
+#5. Simple Interview Line
+👉 Agile is the methodology, Scrum is the framework used to implement Agile, and Jira is the tool used to manage Agile/Scrum projects.
+
+
+
+
+| Point             | Agile                                                    | Scrum                                        | Jira                                                          |
+| ----------------- | -------------------------------------------------------- | -------------------------------------------- | ------------------------------------------------------------- |
+| Type              | Software development methodology / philosophy            | Agile framework                              | Project management & issue tracking tool                      |
+| Purpose           | Flexible and iterative software development              | Agile process ko implement karna             | Tasks, bugs aur sprints manage karna                          |
+| Nature            | Concept / Approach                                       | Process / Framework                          | Software application / Tool                                   |
+| Main Focus        | Customer collaboration, flexibility, continuous delivery | Sprint execution and team coordination       | Task tracking and project management                          |
+| Work Style        | Iterative development                                    | Sprint-based development                     | Board/workflow-based tracking                                 |
+| Time Duration     | Fixed nahi hota                                          | Fixed sprint duration (2–3 weeks)            | Sprint/task tracking according to project                     |
+| Roles             | Specific roles mandatory nahi                            | Product Owner, Scrum Master, Dev Team        | Assignee, Reporter, Admin etc.                                |
+| Workflow          | Backlog → Sprint → Review → Feedback                     | Sprint Planning → Sprint → Standup → Review  | To Do → In Progress → Testing → Done                          |
+| Deliverable       | Working software in iterations                           | Working feature after every sprint           | Project/task progress reports                                 |
+| Usage             | Development strategy define karta hai                    | Team ko Agile follow karne me help karta hai | Agile/Scrum work ko manage karta hai                          |
+| Example           | Continuous feedback & iterative development              | Daily Standup, Sprint Review                 | Epic, Story, Task, Bug                                        |
+| Dependency        | Tool ke bina bhi use ho sakta hai                        | Agile ke under use hota hai                  | Mostly Agile/Scrum projects me use hota hai                   |
+| Developed By      | Agile Manifesto concepts                                 | Scrum framework creators                     | [Atlassian](https://www.atlassian.com?utm_source=chatgpt.com) |
+| Simple Definition | “How to develop software”                                | “How to execute Agile”                       | “How to track and manage work”                                |

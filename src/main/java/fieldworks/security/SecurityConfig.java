@@ -20,14 +20,37 @@ import fieldworks.services.EmployeeService;
 @EnableMethodSecurity
 public class SecurityConfig {
 
+//	@Bean
+//	public SecurityFilterChain filterChain(HttpSecurity http, JwtRequestFilter jwtRequestFilter) throws Exception {
+//
+//		http.csrf(csrf -> csrf.disable()).authorizeHttpRequests(auth -> auth
+//				.requestMatchers("/employee/page/**", "/WEB-INF/jsp/**", "/css/**", "/js/**").permitAll()
+//				.requestMatchers("/employee/ajax/**").permitAll()
+//				.requestMatchers("/api/employees/**").permitAll()
+//				.requestMatchers("/employee/login", "/employee/register").permitAll().anyRequest().authenticated())
+//				.sessionManagement(s -> s.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+//				.addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);
+//
+//		return http.build();
+//	}
+
 	@Bean
 	public SecurityFilterChain filterChain(HttpSecurity http, JwtRequestFilter jwtRequestFilter) throws Exception {
 
 		http.csrf(csrf -> csrf.disable()).authorizeHttpRequests(auth -> auth
+
+				// Existing
 				.requestMatchers("/employee/page/**", "/WEB-INF/jsp/**", "/css/**", "/js/**").permitAll()
-				.requestMatchers("/employee/ajax/**").permitAll()
-				.requestMatchers("/api/employees/**").permitAll()
-				.requestMatchers("/employee/login", "/employee/register").permitAll().anyRequest().authenticated())
+
+				.requestMatchers("/employee/ajax/**").permitAll().requestMatchers("/api/employees/**").permitAll()
+				.requestMatchers("/employee/login", "/employee/register").permitAll()
+
+				// Swagger
+				.requestMatchers("/swagger-ui/**", "/swagger-ui.html", "/v3/api-docs/**", "/v3/api-docs",
+						"/swagger-resources/**", "/webjars/**")
+				.permitAll()
+
+				.anyRequest().authenticated())
 				.sessionManagement(s -> s.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
 				.addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);
 
